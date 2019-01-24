@@ -16,7 +16,8 @@ RUN set -x \
 
 RUN mkdir -p /tmp/KAFKACONNECT
 
-ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT 
+ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT  \
+    |tar -xJC /tmp/KAFKACONNECT/
 
 RUN cd /tmp/KAFKACONNECT/confluent-hub-client-latest/bin
 
