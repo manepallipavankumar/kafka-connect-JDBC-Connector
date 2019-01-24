@@ -13,6 +13,6 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y confluent-platform-oss-2.11
 
-ADD confluent-hub-client-latest.tar /tmp/KAFKACONNECT
+ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT
 
 RUN confluent-hub install confluentinc/kafka-connect-jdbc:latest
