@@ -14,7 +14,9 @@ RUN set -x \
     && apt-get install -y confluent-platform-oss-2.11 \
     && apt-get install xz-utils
 
-ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT && tar -C /tmp/ -xf /tmp/confluent-hub-client-latest.tar.gz
+RUN mkdir -p /tmp/KAFKACONNECT
+
+ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT && tar -C /tmp/KAFKACONNECT/ -xf /tmp/KAFKACONNECT/confluent-hub-client-latest.tar.gz
 
 RUN cd /tmp/confluent-hub-client-latest/bin
 
