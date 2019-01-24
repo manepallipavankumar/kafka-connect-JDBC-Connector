@@ -16,8 +16,8 @@ RUN set -x \
 
 RUN mkdir -p /tmp/KAFKACONNECT
 
-ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT && tar -C /tmp/KAFKACONNECT/ -xf /tmp/KAFKACONNECT/confluent-hub-client-latest.tar.gz
+ADD confluent-hub-client-latest.tar.gz /tmp/KAFKACONNECT 
 
-RUN cd /tmp/confluent-hub-client-latest/bin
+RUN cd /tmp/KAFKACONNECT/confluent-hub-client-latest/bin
 
 RUN confluent-hub install confluentinc/kafka-connect-jdbc:latest
